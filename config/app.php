@@ -1,14 +1,14 @@
 <?php
 return [
-    /**
-     * Debug Level:
-     *
-     * Production Mode:
-     * false: No error messages, errors, or warnings shown.
-     *
-     * Development Mode:
-     * true: Errors and warnings shown.
-     */
+/**
+ * Debug Level:
+ *
+ * Production Mode:
+ * false: No error messages, errors, or warnings shown.
+ *
+ * Development Mode:
+ * true: Errors and warnings shown.
+ */
     'debug' => filter_var(env('DEBUG', true), FILTER_VALIDATE_BOOLEAN),
 
     /**
@@ -255,9 +255,9 @@ return [
              * the following line and set the port accordingly
              */
             //'port' => 'non_standard_port_number',
-            'username' => 'my_app',
-            'password' => 'secret',
-            'database' => 'my_app',
+            'username' => 'edlovett',
+            'password' => 'edlledaa11',
+            'database' => 'newspe',
             /*
              * You do not need to set this flag to use full utf-8 encoding (internal default since CakePHP 3.6).
              */
