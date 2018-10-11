@@ -5,6 +5,47 @@ When Mary completes her registration she will get information on interviewing, s
 ☐ Get Information from SPE Committee
 ☐ Create Instruction pages
 
+Candidate
+home
+profile ( editing, password, documents )
+employers ( all employers, all position, saved position [ able to send from any employer area ] )
+schedule ( saturday, friday )
+messages ( have unread message, send to employers )
+help ( contact form to gmail account, contact form [dump database] )
+signout
+
+employer
+home
+profile ( editing, password )
+account ( selecting and paying for options )
+positions ( CRUD )
+candidates ( all candidates, saved candidates [ able to send from any candidate area ] )
+schedule ( saturday, friday ) *no need to disable*
+messages ( have unread message, send to candidates )
+help ( contact form to gmail account, contact form [dump database] )
+signout
+
+Job Search
+state
+institution
+employer number
+position type ( grad  entry )
+
+Candidate Search
+candidate number
+username
+email
+degree
+name
+
+Admin 
+candidate
+employers 
+schedule [see employers] ( edit candidate / employer, print candidate / employer )
+packages 
+positions
+messages 
+
 Logging In:
 
 Purchasing A Package:
