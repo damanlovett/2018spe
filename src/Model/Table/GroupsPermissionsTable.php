@@ -1,0 +1,63 @@
+<?php
+namespace App\Model\Table;
+
+use Cake\ORM\Query;
+use Cake\ORM\RulesChecker;
+use Cake\ORM\Table;
+use Cake\Validation\Validator;
+
+/**
+ * GroupsPermissions Model
+ *
+ * @property \App\Model\Table\GroupsTable|\Cake\ORM\Association\BelongsTo $Groups
+ * @property \App\Model\Table\PermissionsTable|\Cake\ORM\Association\BelongsTo $Permissions
+ *
+ * @method \App\Model\Entity\GroupsPermission get($primaryKey, $options = [])
+ * @method \App\Model\Entity\GroupsPermission newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\GroupsPermission[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\GroupsPermission|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\GroupsPermission|bool saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\GroupsPermission patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\GroupsPermission[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\GroupsPermission findOrCreate($search, callable $callback = null, $options = [])
+ */
+class GroupsPermissionsTable extends Table
+{
+
+    /**
+     * Initialize method
+     *
+     * @param array $config The configuration for the Table.
+     * @return void
+     */
+    public function initialize(array $config)
+    {
+        parent::initialize($config);
+
+        $this->setTable('groups_permissions');
+
+        $this->belongsTo('Groups', [
+            'foreignKey' => 'group_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('Permissions', [
+            'foreignKey' => 'permission_id',
+            'joinType' => 'INNER'
+        ]);
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['group_id'], 'Groups'));
+        $rules->add($rules->existsIn(['permission_id'], 'Permissions'));
+
+        return $rules;
+    }
+}
