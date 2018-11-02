@@ -5,7 +5,7 @@ When Mary completes her registration she will get information on interviewing, s
 ☐ Get Information from SPE Committee
 ☐ Create Instruction pages
 
-Candidate
+Candidate Navigation:
 home
 profile ( editing, password, documents )
 employers ( all employers, all position, saved position [ able to send from any employer area ] )
@@ -14,8 +14,7 @@ messages ( have unread message, send to employers )
 help ( contact form to gmail account, contact form [dump database] )
 signout
 
-employer
-home
+Employer Navigation:
 profile ( editing, password )
 account ( selecting and paying for options )
 positions ( CRUD )
@@ -25,20 +24,20 @@ messages ( have unread message, send to candidates )
 help ( contact form to gmail account, contact form [dump database] )
 signout
 
-Job Search
+Job Search Fields:
 state
 institution
 employer number
 position type ( grad  entry )
 
-Candidate Search
+Candidate Search Fields:
 candidate number
 username
 email
 degree
 name
 
-Admin 
+Admin Navigation:
 candidate
 employers 
 schedule [see employers] ( edit candidate / employer, print candidate / employer )
