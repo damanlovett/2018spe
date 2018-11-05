@@ -29,6 +29,7 @@ class EmployersControllerTest extends IntegrationTestCase
         'app.sat_schedules',
         'app.sat_timeslots',
         'app.transactions',
+        'app.users',
         'app.users2'
     ];
 

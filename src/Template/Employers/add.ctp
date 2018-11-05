@@ -1,11 +1,9 @@
 <?php
-
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Employer $employer
  */
 ?>
-<!-- TODO make user the author and make it a hidden field -->
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -34,6 +32,8 @@
         <li><?= $this->Html->link(__('New Sat Timeslot'), ['controller' => 'SatTimeslots', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Transactions'), ['controller' => 'Transactions', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Transaction'), ['controller' => 'Transactions', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Users2'), ['controller' => 'Users2', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Users2'), ['controller' => 'Users2', 'action' => 'add']) ?></li>
     </ul>
@@ -43,16 +43,16 @@
     <fieldset>
         <legend><?= __('Add Employer') ?></legend>
         <?php
-        echo $this->Form->control('emp_num');
-        echo $this->Form->control('institution');
-        echo $this->Form->control('interviewers');
-        echo $this->Form->control('positions');
-        echo $this->Form->control('address');
-        echo $this->Form->control('city');
-        echo $this->Form->control('state');
-        echo $this->Form->control('zip');
-        echo $this->Form->control('website');
-        echo $this->Form->control('active');
+            echo $this->Form->control('emp_num');
+            echo $this->Form->control('institution');
+            echo $this->Form->control('interviewers');
+            echo $this->Form->control('positions');
+            echo $this->Form->control('address');
+            echo $this->Form->control('city');
+            echo $this->Form->control('state');
+            echo $this->Form->control('zip');
+            echo $this->Form->control('website');
+            echo $this->Form->control('active');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

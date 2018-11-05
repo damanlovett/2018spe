@@ -10,7 +10,6 @@ use Cake\Validation\Validator;
  * Users Model
  *
  * @property \App\Model\Table\UserGroupsTable|\Cake\ORM\Association\BelongsTo $UserGroups
- * @property |\Cake\ORM\Association\BelongsTo $Employers
  * @property \App\Model\Table\ActivityTable|\Cake\ORM\Association\HasMany $Activity
  * @property \App\Model\Table\AnnouncementsTable|\Cake\ORM\Association\HasMany $Announcements
  * @property \App\Model\Table\FavCandidatesTable|\Cake\ORM\Association\HasMany $FavCandidates
@@ -69,9 +68,6 @@ class UsersTable extends Table
 
         $this->belongsTo('UserGroups', [
             'foreignKey' => 'user_group_id'
-        ]);
-        $this->belongsTo('Employers', [
-            'foreignKey' => 'employer_id'
         ]);
         $this->hasMany('Activity', [
             'foreignKey' => 'user_id'
@@ -165,10 +161,6 @@ class UsersTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->integer('can_num')
-            ->allowEmpty('can_num');
-
-        $validator
             ->scalar('username')
             ->maxLength('username', 100)
             ->allowEmpty('username');
@@ -247,7 +239,6 @@ class UsersTable extends Table
         $rules->add($rules->isUnique(['username']));
         $rules->add($rules->isUnique(['email']));
         $rules->add($rules->existsIn(['user_group_id'], 'UserGroups'));
-        $rules->add($rules->existsIn(['employer_id'], 'Employers'));
 
         return $rules;
     }

@@ -17,7 +17,7 @@ class EmployersFixture extends TestFixture
      */
     // @codingStandardsIgnoreStart
     public $fields = [
-        'id' => ['type' => 'string', 'length' => 36, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
+        'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'emp_num' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'institution' => ['type' => 'string', 'length' => 100, 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'interviewers' => ['type' => 'integer', 'length' => 5, 'unsigned' => false, 'null' => true, 'default' => '0', 'comment' => '', 'precision' => null, 'autoIncrement' => null],
@@ -49,7 +49,7 @@ class EmployersFixture extends TestFixture
     {
         $this->records = [
             [
-                'id' => 'e32d6283-e24d-4f3d-a24c-0ab85ced38e8',
+                'id' => 1,
                 'emp_num' => 1,
                 'institution' => 'Lorem ipsum dolor sit amet',
                 'interviewers' => 1,
@@ -60,8 +60,8 @@ class EmployersFixture extends TestFixture
                 'zip' => 'Lorem ipsum dolor sit amet',
                 'website' => 'Lorem ipsum dolor sit amet',
                 'active' => 1,
-                'created' => '2018-10-31 19:26:02',
-                'modified' => '2018-10-31 19:26:02'
+                'created' => '2018-11-05 10:49:45',
+                'modified' => '2018-11-05 10:49:45'
             ],
         ];
         parent::init();

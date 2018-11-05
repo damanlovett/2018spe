@@ -50,7 +50,7 @@ class EmployersController extends AppController
     public function view($id = null)
     {
         $employer = $this->Employers->get($id, [
-            'contain' => ['Announcements', 'FavCandidates', 'FriSchedules', 'FriTimeslots', 'Jobs', 'Messages', 'Packages', 'Posts', 'SatSchedules', 'SatTimeslots', 'Transactions', 'Users']
+            'contain' => ['Announcements', 'FavCandidates', 'FriSchedules', 'FriTimeslots', 'Jobs', 'Messages', 'Packages', 'Posts', 'SatSchedules', 'SatTimeslots', 'Transactions', 'Users2']
         ]);
 
         $this->set('employer', $employer);
@@ -66,7 +66,7 @@ class EmployersController extends AppController
     public function mview($id = null)
     {
         $employer = $this->Employers->get($id, [
-            'contain' => ['Announcements', 'FavCandidates', 'FriSchedules', 'FriTimeslots', 'Jobs', 'Messages', 'Packages', 'Posts', 'SatSchedules', 'SatTimeslots', 'Transactions', 'Users']
+            'contain' => ['Announcements', 'FavCandidates', 'FriSchedules', 'FriTimeslots', 'Jobs', 'Messages', 'Packages', 'Posts', 'SatSchedules', 'SatTimeslots', 'Transactions', 'Users2']
         ]);
 
         $this->set('employer', $employer);

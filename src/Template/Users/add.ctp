@@ -10,6 +10,8 @@
         <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List User Groups'), ['controller' => 'UserGroups', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New User Group'), ['controller' => 'UserGroups', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Employers'), ['controller' => 'Employers', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Employer'), ['controller' => 'Employers', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Activity'), ['controller' => 'Activity', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Activity'), ['controller' => 'Activity', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Announcements'), ['controller' => 'Announcements', 'action' => 'index']) ?></li>
@@ -68,6 +70,8 @@
         <legend><?= __('Add User') ?></legend>
         <?php
             echo $this->Form->control('user_group_id', ['options' => $userGroups, 'empty' => true]);
+            echo $this->Form->control('employer_id', ['options' => $employers, 'empty' => true]);
+            echo $this->Form->control('can_num');
             echo $this->Form->control('username');
             echo $this->Form->control('password');
             echo $this->Form->control('email');

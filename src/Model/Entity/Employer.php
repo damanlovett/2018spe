@@ -6,7 +6,7 @@ use Cake\ORM\Entity;
 /**
  * Employer Entity
  *
- * @property string $id
+ * @property int $id
  * @property int $emp_num
  * @property string $institution
  * @property int $interviewers
@@ -19,6 +19,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
+ * @property \App\Model\Entity\Position[] $positions
  * @property \App\Model\Entity\Announcement[] $announcements
  * @property \App\Model\Entity\FavCandidate[] $fav_candidates
  * @property \App\Model\Entity\FriSchedule[] $fri_schedules
@@ -48,6 +49,7 @@ class Employer extends Entity
         'emp_num' => true,
         'institution' => true,
         'interviewers' => true,
+        'positions' => true,
         'address' => true,
         'city' => true,
         'state' => true,

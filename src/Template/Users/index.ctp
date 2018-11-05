@@ -10,6 +10,8 @@
         <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List User Groups'), ['controller' => 'UserGroups', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New User Group'), ['controller' => 'UserGroups', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Employers'), ['controller' => 'Employers', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Employer'), ['controller' => 'Employers', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Activity'), ['controller' => 'Activity', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Activity'), ['controller' => 'Activity', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Announcements'), ['controller' => 'Announcements', 'action' => 'index']) ?></li>
@@ -69,6 +71,8 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('user_group_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('employer_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('can_num') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('username') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('password') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('email') ?></th>
@@ -93,6 +97,8 @@
             <tr>
                 <td><?= $this->Number->format($user->id) ?></td>
                 <td><?= $user->has('user_group') ? $this->Html->link($user->user_group->name, ['controller' => 'UserGroups', 'action' => 'view', $user->user_group->id]) : '' ?></td>
+                <td><?= $user->has('employer') ? $this->Html->link($user->employer->id, ['controller' => 'Employers', 'action' => 'view', $user->employer->id]) : '' ?></td>
+                <td><?= $this->Number->format($user->can_num) ?></td>
                 <td><?= h($user->username) ?></td>
                 <td><?= h($user->password) ?></td>
                 <td><?= h($user->email) ?></td>

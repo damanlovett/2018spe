@@ -8,6 +8,8 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $user_group_id
+ * @property int $employer_id
+ * @property int $can_num
  * @property string $username
  * @property string $password
  * @property string $email
@@ -66,6 +68,8 @@ class User extends Entity
      */
     protected $_accessible = [
         'user_group_id' => true,
+        'employer_id' => true,
+        'can_num' => true,
         'username' => true,
         'password' => true,
         'email' => true,

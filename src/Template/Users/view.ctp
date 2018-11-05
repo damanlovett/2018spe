@@ -13,6 +13,8 @@
         <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List User Groups'), ['controller' => 'UserGroups', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New User Group'), ['controller' => 'UserGroups', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Employers'), ['controller' => 'Employers', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Employer'), ['controller' => 'Employers', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Activity'), ['controller' => 'Activity', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Activity'), ['controller' => 'Activity', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Announcements'), ['controller' => 'Announcements', 'action' => 'index']) ?> </li>
@@ -73,6 +75,10 @@
             <td><?= $user->has('user_group') ? $this->Html->link($user->user_group->name, ['controller' => 'UserGroups', 'action' => 'view', $user->user_group->id]) : '' ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Employer') ?></th>
+            <td><?= $user->has('employer') ? $this->Html->link($user->employer->id, ['controller' => 'Employers', 'action' => 'view', $user->employer->id]) : '' ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Username') ?></th>
             <td><?= h($user->username) ?></td>
         </tr>
@@ -107,6 +113,10 @@
         <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($user->id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Can Num') ?></th>
+            <td><?= $this->Number->format($user->can_num) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Active') ?></th>

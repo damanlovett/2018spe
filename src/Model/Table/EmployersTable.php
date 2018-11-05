@@ -21,6 +21,7 @@ use Cake\Validation\Validator;
  * @property \App\Model\Table\SatSchedulesTable|\Cake\ORM\Association\HasMany $SatSchedules
  * @property \App\Model\Table\SatTimeslotsTable|\Cake\ORM\Association\HasMany $SatTimeslots
  * @property \App\Model\Table\TransactionsTable|\Cake\ORM\Association\HasMany $Transactions
+ * @property |\Cake\ORM\Association\HasMany $Users
  * @property \App\Model\Table\Users2Table|\Cake\ORM\Association\HasMany $Users2
  *
  * @method \App\Model\Entity\Employer get($primaryKey, $options = [])
@@ -89,6 +90,9 @@ class EmployersTable extends Table
         $this->hasMany('Transactions', [
             'foreignKey' => 'employer_id'
         ]);
+        $this->hasMany('Users', [
+            'foreignKey' => 'employer_id'
+        ]);
         $this->hasMany('Users2', [
             'foreignKey' => 'employer_id'
         ]);
@@ -103,8 +107,7 @@ class EmployersTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->scalar('id')
-            ->maxLength('id', 36)
+            ->integer('id')
             ->allowEmpty('id', 'create');
 
         $validator

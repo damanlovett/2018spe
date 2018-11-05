@@ -21,7 +21,7 @@ class UsersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['UserGroups']
+            'contain' => ['UserGroups', 'Employers']
         ];
         $users = $this->paginate($this->Users);
 
@@ -38,7 +38,7 @@ class UsersController extends AppController
     public function view($id = null)
     {
         $user = $this->Users->get($id, [
-            'contain' => ['UserGroups', 'Groups', 'Activity', 'Announcements', 'FavCandidates', 'Favorites', 'Fees', 'FriSchedules', 'FriTimeslots', 'Jobs', 'LoginTokens', 'Messages', 'MyFiles', 'Packages', 'Posts', 'SatSchedules', 'SatTimeslots', 'ScheduledEmailRecipients', 'Transactions', 'UserActivities', 'UserContacts', 'UserDetails', 'UserEmailRecipients', 'UserEmailSignatures', 'UserEmailTemplates', 'UserSocials']
+            'contain' => ['UserGroups', 'Employers', 'Groups', 'Activity', 'Announcements', 'FavCandidates', 'Favorites', 'Fees', 'FriSchedules', 'FriTimeslots', 'Jobs', 'LoginTokens', 'Messages', 'MyFiles', 'Packages', 'Posts', 'SatSchedules', 'SatTimeslots', 'ScheduledEmailRecipients', 'Transactions', 'UserActivities', 'UserContacts', 'UserDetails', 'UserEmailRecipients', 'UserEmailSignatures', 'UserEmailTemplates', 'UserSocials']
         ]);
 
         $this->set('user', $user);
@@ -62,8 +62,9 @@ class UsersController extends AppController
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
         $userGroups = $this->Users->UserGroups->find('list', ['limit' => 200]);
+        $employers = $this->Users->Employers->find('list', ['limit' => 200]);
         $groups = $this->Users->Groups->find('list', ['limit' => 200]);
-        $this->set(compact('user', 'userGroups', 'groups'));
+        $this->set(compact('user', 'userGroups', 'employers', 'groups'));
     }
 
     /**
@@ -88,8 +89,9 @@ class UsersController extends AppController
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
         $userGroups = $this->Users->UserGroups->find('list', ['limit' => 200]);
+        $employers = $this->Users->Employers->find('list', ['limit' => 200]);
         $groups = $this->Users->Groups->find('list', ['limit' => 200]);
-        $this->set(compact('user', 'userGroups', 'groups'));
+        $this->set(compact('user', 'userGroups', 'employers', 'groups'));
     }
 
     /**
