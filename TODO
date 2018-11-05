@@ -13,6 +13,7 @@ schedule ( saturday, friday )
 messages ( have unread message, send to employers )
 help ( contact form to gmail account, contact form [dump database] )
 signout
+☐ Make interview page / controller filtered by candidate
 
 Employer Navigation:
 profile ( editing, password )
