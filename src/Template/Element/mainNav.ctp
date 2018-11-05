@@ -4,13 +4,14 @@
     <span class="caret"></span>
   </button>
   <ul class="dropdown-content">
-<li><?= $this->Html->link(__('Home'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-<li><?= $this->Html->link(__('Profile'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-<li><?= $this->Html->link(__('Employers'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-<li><?= $this->Html->link(__('Schedule'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-<li><?= $this->Html->link(__('Messages'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-<li><?= $this->Html->link(__('Help'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-<li><?= $this->Html->link(__('Sign Out'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+<li><?= $this->Html->link(__("<i class='fas fa-home'></i>&nbsp;&nbsp;Home"), ['controller' => 'Users', 'action' => 'add'], ['escape' => false]) ?></li>
+<li><?= $this->Html->link(__("<i class='fa fas fa-user-alt'></i>&nbsp;&nbsp;Profile"), ['controller' => 'Users', 'action' => 'add'], ['escape' => false]) ?></li>
+<li><?= $this->Html->link(__("<i class='fa fas fa-users'></i>&nbsp;&nbsp;Employers"), ['controller' => 'Employers', 'action' => 'index'], ['escape' => false]) ?></li>
+<li><?= $this->Html->link(__("<i class='fa fas fa-briefcase'></i>&nbsp;&nbsp;Positions"), ['controller' => 'Jobs', 'action' => 'index'], ['escape' => false]) ?></li>
+<li><?= $this->Html->link(__("<i class='fa fas far fa-clock'></i>&nbsp;&nbsp;Schedule"), ['controller' => 'Users', 'action' => 'add'], ['escape' => false]) ?></li>
+<li><?= $this->Html->link(__("<i class='fa fas fa fas fa-envelope-open-text'></i>&nbsp;&nbsp;Messages"), ['controller' => 'Users', 'action' => 'add'], ['escape' => false]) ?></li>
+<li><?= $this->Html->link(__("<i class='fa fas far fa-question-circle'></i>&nbsp;&nbsp;Help"), ['controller' => 'Users', 'action' => 'add'], ['escape' => false]) ?></li>
+<li><?= $this->Html->link(__("<i class='fa fas fas fa-sign-out-alt'></i>&nbsp;&nbsp;Sign Out"), ['controller' => 'Users', 'action' => 'add'], ['escape' => false]) ?></li>
 </ul>
 </div>
 

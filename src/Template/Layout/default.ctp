@@ -34,6 +34,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
     <!-- TODO Remove style for temp nav -->
     <style>
 .dropdown {
@@ -65,11 +67,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             </li>
         </ul>
         <?= $this->element('mainNav') ?>
-
         </div>
         <div class="top-bar-section">
             <ul class="right">
-                <li><a target="_blank" href="https://book.cakephp.org/3.0/">Documentation</a></li>
+                <li><a target="_blank" href="https://book.cakephp.org/3.0/">Documentation <i class="fas fa-ad"></i></a></li>
                 <li><a target="_blank" href="https://api.cakephp.org/3.0/">API</a></li>
             </ul>
         </div>

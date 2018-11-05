@@ -5,7 +5,7 @@ When Mary completes her registration she will get information on interviewing, s
 ☐ Get Information from SPE Committee
 ☐ Create Instruction pages
 
-Candidate Navigation:
+Candidate:
 home
 profile ( editing, password, documents )
 employers ( all employers, all position, saved position [ able to send from any employer area ] )
@@ -23,6 +23,10 @@ schedule ( saturday, friday ) *no need to disable*
 messages ( have unread message, send to candidates )
 help ( contact form to gmail account, contact form [dump database] )
 signout
+☐ User field on the add.ctp the created field and hidden
+☐ Jobs are only visible by candidates with candidate number
+☐ Create search for jobs
+☐ Create search for employers
 
 Job Search Fields:
 state

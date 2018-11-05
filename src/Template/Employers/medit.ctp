@@ -5,10 +5,15 @@
  * @var \App\Model\Entity\Employer $employer
  */
 ?>
-<!-- TODO make user the author and make it a hidden field -->
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
+        <li><?= $this->Form->postLink(
+                __('Delete'),
+                ['action' => 'delete', $employer->id],
+                ['confirm' => __('Are you sure you want to delete # {0}?', $employer->id)]
+            )
+            ?></li>
         <li><?= $this->Html->link(__('List Employers'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Announcements'), ['controller' => 'Announcements', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Announcement'), ['controller' => 'Announcements', 'action' => 'add']) ?></li>
@@ -41,7 +46,7 @@
 <div class="employers form large-9 medium-8 columns content">
     <?= $this->Form->create($employer) ?>
     <fieldset>
-        <legend><?= __('Add Employer') ?></legend>
+        <legend><?= __('Edit Employer') ?></legend>
         <?php
         echo $this->Form->control('emp_num');
         echo $this->Form->control('institution');

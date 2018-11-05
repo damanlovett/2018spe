@@ -20,6 +20,21 @@ class EmployersController extends AppController
      */
     public function index()
     {
+
+        $query = $this->Employers->find()->where(['emp_num' => true]);
+        $this->set('employers', $this->paginate($query));
+
+
+    }
+
+    /**
+     * Manager method
+     *
+     * @return \Cake\Http\Response|void
+     */
+
+    public function manager()
+    {
         $employers = $this->paginate($this->Employers);
 
         $this->set(compact('employers'));
@@ -35,7 +50,23 @@ class EmployersController extends AppController
     public function view($id = null)
     {
         $employer = $this->Employers->get($id, [
-            'contain' => ['Announcements', 'FavCandidates', 'FriSchedules', 'FriTimeslots', 'Jobs', 'Messages', 'Packages', 'Positions', 'Posts', 'SatSchedules', 'SatTimeslots', 'Transactions', 'Users2']
+            'contain' => ['Announcements', 'FavCandidates', 'FriSchedules', 'FriTimeslots', 'Jobs', 'Messages', 'Packages', 'Posts', 'SatSchedules', 'SatTimeslots', 'Transactions', 'Users2']
+        ]);
+
+        $this->set('employer', $employer);
+    }
+
+    /**
+     * Manager view method
+     *
+     * @param string|null $id Employer id.
+     * @return \Cake\Http\Response|void
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function mview($id = null)
+    {
+        $employer = $this->Employers->get($id, [
+            'contain' => ['Announcements', 'FavCandidates', 'FriSchedules', 'FriTimeslots', 'Jobs', 'Messages', 'Packages', 'Posts', 'SatSchedules', 'SatTimeslots', 'Transactions', 'Users2']
         ]);
 
         $this->set('employer', $employer);
@@ -47,6 +78,26 @@ class EmployersController extends AppController
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
     public function add()
+    {
+        $employer = $this->Employers->newEntity();
+        if ($this->request->is('post')) {
+            $employer = $this->Employers->patchEntity($employer, $this->request->getData());
+            if ($this->Employers->save($employer)) {
+                $this->Flash->success(__('The employer has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The employer could not be saved. Please, try again.'));
+        }
+        $this->set(compact('employer'));
+    }
+
+    /**
+     * Manager add method
+     *
+     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
+     */
+    public function madd()
     {
         $employer = $this->Employers->newEntity();
         if ($this->request->is('post')) {
@@ -86,6 +137,30 @@ class EmployersController extends AppController
     }
 
     /**
+     * Manager edit method
+     *
+     * @param string|null $id Employer id.
+     * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.
+     */
+    public function medit($id = null)
+    {
+        $employer = $this->Employers->get($id, [
+            'contain' => []
+        ]);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $employer = $this->Employers->patchEntity($employer, $this->request->getData());
+            if ($this->Employers->save($employer)) {
+                $this->Flash->success(__('The employer has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The employer could not be saved. Please, try again.'));
+        }
+        $this->set(compact('employer'));
+    }
+
+    /**
      * Delete method
      *
      * @param string|null $id Employer id.
@@ -93,6 +168,25 @@ class EmployersController extends AppController
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function delete($id = null)
+    {
+        $this->request->allowMethod(['post', 'delete']);
+        $employer = $this->Employers->get($id);
+        if ($this->Employers->delete($employer)) {
+            $this->Flash->success(__('The employer has been deleted.'));
+        } else {
+            $this->Flash->error(__('The employer could not be deleted. Please, try again.'));
+        }
+
+        return $this->redirect(['action' => 'index']);
+    }
+    /**
+     * Remove method
+     *
+     * @param string|null $id Employer id.
+     * @return \Cake\Http\Response|null Redirects to index.
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function remove($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
         $employer = $this->Employers->get($id);
