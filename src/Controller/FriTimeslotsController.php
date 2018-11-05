@@ -29,6 +29,21 @@ class FriTimeslotsController extends AppController
     }
 
     /**
+     * Candidate Interview method
+     *
+     * @return \Cake\Http\Response|void
+     */
+    public function interviews()
+    {
+        $this->paginate = [
+            'contain' => ['Employers', 'FriSchedules', 'Users', 'Jobs']
+        ];
+        $friTimeslots = $this->paginate($this->FriTimeslots);
+
+        $this->set(compact('friTimeslots'));
+    }
+
+    /**
      * View method
      *
      * @param string|null $id Fri Timeslot id.
