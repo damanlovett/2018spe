@@ -6,10 +6,10 @@
  */
 
 ?>
-<!--TODO Make page / controller filtered by candidate -->
+<!--TODO Make page / controller filtered by employer ID -->
 
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
-<h2>Candidate Interviews</h2>
+<h2>Employer Interviews</h2>
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Fri Timeslot'), ['action' => 'add']) ?></li>

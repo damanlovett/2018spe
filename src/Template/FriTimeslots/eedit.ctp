@@ -6,9 +6,15 @@
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
-<h2>Manager Add</h2>
+<h2>Employer Edit</h2>
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
+        <li><?= $this->Form->postLink(
+                __('Delete'),
+                ['action' => 'delete', $friTimeslot->id],
+                ['confirm' => __('Are you sure you want to delete # {0}?', $friTimeslot->id)]
+            )
+            ?></li>
         <li><?= $this->Html->link(__('List Fri Timeslots'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Employers'), ['controller' => 'Employers', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Employer'), ['controller' => 'Employers', 'action' => 'add']) ?></li>
@@ -23,7 +29,7 @@
 <div class="friTimeslots form large-9 medium-8 columns content">
     <?= $this->Form->create($friTimeslot) ?>
     <fieldset>
-        <legend><?= __('Add Fri Timeslot') ?></legend>
+        <legend><?= __('Edit Fri Timeslot') ?></legend>
         <?php
         echo $this->Form->control('employer_id', ['options' => $employers, 'empty' => true]);
         echo $this->Form->control('fri_schedule_id', ['options' => $friSchedules]);

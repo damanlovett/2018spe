@@ -20,9 +20,15 @@ class EmployersController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'conditions' => ['emp_num IS NOT' => null]
+        ];
+        $employers = $this->paginate($this->Employers);
 
-        $query = $this->Employers->find()->where(['emp_num' => true]);
-        $this->set('employers', $this->paginate($query));
+        $this->set(compact('employers'));
+
+        //$query = $this->Employers->find()->where(['emp_num' => true]);
+        //$this->set('employers', $this->paginate($query));
 
 
     }

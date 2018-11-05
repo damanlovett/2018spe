@@ -6,7 +6,7 @@
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
-<h2>Manager View</h2>
+<h2>Employer View</h2>
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Fri Timeslot'), ['action' => 'edit', $friTimeslot->id]) ?> </li>

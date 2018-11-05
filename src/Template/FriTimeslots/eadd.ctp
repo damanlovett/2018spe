@@ -6,7 +6,7 @@
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
-<h2>Manager Add</h2>
+<h2>Employer Add</h2>
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('List Fri Timeslots'), ['action' => 'index']) ?></li>

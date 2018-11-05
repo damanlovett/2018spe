@@ -1,10 +1,12 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\FriTimeslot[]|\Cake\Collection\CollectionInterface $friTimeslots
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
+<h2>Manager Dashboard</h2>
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Fri Timeslot'), ['action' => 'add']) ?></li>
@@ -39,7 +41,7 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($friTimeslots as $friTimeslot): ?>
+            <?php foreach ($friTimeslots as $friTimeslot) : ?>
             <tr>
                 <td><?= $this->Number->format($friTimeslot->id) ?></td>
                 <td><?= $friTimeslot->has('employer') ? $this->Html->link($friTimeslot->employer->id, ['controller' => 'Employers', 'action' => 'view', $friTimeslot->employer->id]) : '' ?></td>

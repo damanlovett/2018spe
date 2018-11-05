@@ -1,10 +1,12 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\FriTimeslot $friTimeslot
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
+<h2>Manager Add</h2>
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Form->postLink(
@@ -12,7 +14,7 @@
                 ['action' => 'delete', $friTimeslot->id],
                 ['confirm' => __('Are you sure you want to delete # {0}?', $friTimeslot->id)]
             )
-        ?></li>
+            ?></li>
         <li><?= $this->Html->link(__('List Fri Timeslots'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Employers'), ['controller' => 'Employers', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Employer'), ['controller' => 'Employers', 'action' => 'add']) ?></li>
@@ -29,16 +31,16 @@
     <fieldset>
         <legend><?= __('Edit Fri Timeslot') ?></legend>
         <?php
-            echo $this->Form->control('employer_id', ['options' => $employers, 'empty' => true]);
-            echo $this->Form->control('fri_schedule_id', ['options' => $friSchedules]);
-            echo $this->Form->control('user_id', ['options' => $users, 'empty' => true]);
-            echo $this->Form->control('start_time', ['empty' => true]);
-            echo $this->Form->control('end_time', ['empty' => true]);
-            echo $this->Form->control('length');
-            echo $this->Form->control('job_id', ['options' => $jobs, 'empty' => true]);
-            echo $this->Form->control('modified_by');
-            echo $this->Form->control('visible');
-            echo $this->Form->control('notes');
+        echo $this->Form->control('employer_id', ['options' => $employers, 'empty' => true]);
+        echo $this->Form->control('fri_schedule_id', ['options' => $friSchedules]);
+        echo $this->Form->control('user_id', ['options' => $users, 'empty' => true]);
+        echo $this->Form->control('start_time', ['empty' => true]);
+        echo $this->Form->control('end_time', ['empty' => true]);
+        echo $this->Form->control('length');
+        echo $this->Form->control('job_id', ['options' => $jobs, 'empty' => true]);
+        echo $this->Form->control('modified_by');
+        echo $this->Form->control('visible');
+        echo $this->Form->control('notes');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

@@ -1,10 +1,12 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\SatTimeslot[]|\Cake\Collection\CollectionInterface $satTimeslots
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
+<h2>Manager Dashboard</h2>
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Sat Timeslot'), ['action' => 'add']) ?></li>
@@ -39,7 +41,7 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($satTimeslots as $satTimeslot): ?>
+            <?php foreach ($satTimeslots as $satTimeslot) : ?>
             <tr>
                 <td><?= $this->Number->format($satTimeslot->id) ?></td>
                 <td><?= $satTimeslot->has('employer') ? $this->Html->link($satTimeslot->employer->id, ['controller' => 'Employers', 'action' => 'view', $satTimeslot->employer->id]) : '' ?></td>

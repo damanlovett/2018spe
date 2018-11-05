@@ -76,6 +76,38 @@ class JobsController extends AppController
     }
 
     /**
+     * Candidate view method
+     *
+     * @param string|null $id Job id.
+     * @return \Cake\Http\Response|void
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function cview($id = null)
+    {
+        $job = $this->Jobs->get($id, [
+            'contain' => ['Employers', 'Users', 'Favorites', 'FriSchedules', 'FriTimeslots', 'SatSchedules', 'SatTimeslots']
+        ]);
+
+        $this->set('job', $job);
+    }
+
+    /**
+     * Employer view method
+     *
+     * @param string|null $id Job id.
+     * @return \Cake\Http\Response|void
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function eview($id = null)
+    {
+        $job = $this->Jobs->get($id, [
+            'contain' => ['Employers', 'Users', 'Favorites', 'FriSchedules', 'FriTimeslots', 'SatSchedules', 'SatTimeslots']
+        ]);
+
+        $this->set('job', $job);
+    }
+
+    /**
      * Add method
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
