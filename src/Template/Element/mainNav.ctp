@@ -11,7 +11,7 @@
 <li><?= $this->Html->link(__("<i class='fa fas far fa-calendar'></i>&nbsp;&nbsp;Schedule"), ['controller' => 'Users', 'action' => 'add'], ['escape' => false]) ?>
 <ul>
 <li><?= $this->Html->link(__("<i class='fa fas far fa-clock'></i>&nbsp;&nbsp;Friday"), ['controller' => 'FriTimeslots', 'action' => 'interviews'], ['escape' => false]) ?></li>
-<li><?= $this->Html->link(__("<i class='fa fas far fa-clock'></i>&nbsp;&nbsp;Saturday"), ['controller' => 'Users', 'action' => 'add'], ['escape' => false]) ?></li>
+<li><?= $this->Html->link(__("<i class='fa fas far fa-clock'></i>&nbsp;&nbsp;Saturday"), ['controller' => 'SatTimeslots', 'action' => 'interviews'], ['escape' => false]) ?></li>
 </ul></li>
 <li><?= $this->Html->link(__("<i class='fa fas fa fas fa-envelope-open-text'></i>&nbsp;&nbsp;Messages"), ['controller' => 'Users', 'action' => 'add'], ['escape' => false]) ?></li>
 <li><?= $this->Html->link(__("<i class='fa fas far fa-question-circle'></i>&nbsp;&nbsp;Help"), ['controller' => 'Users', 'action' => 'add'], ['escape' => false]) ?></li>
