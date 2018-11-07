@@ -2,53 +2,56 @@
 ------ Employers ----------------
 Registration:
 When Mary completes her registration she will get information on interviewing, scheduling , reviewing candidates.
-☐ Get Information from SPE Committee
-☐ Create Instruction pages
+    ☐ Get Information from SPE Committee
+    ☐ Create Instruction pages
 
 Candidate:
-home
-profile ( editing, password, documents )
-employers ( all employers, all position, saved position [ able to send from any employer area ] )
-schedule ( saturday, friday )
-messages ( have unread message, send to employers )
-help ( contact form to gmail account, contact form [dump database] )
-signout
-☐ Make interview page / controller filtered by candidate
+        home
+        profile ( editing, password, documents )
+        employers ( all employers, all position, saved position [ able to send from any employer area ] )
+        schedule ( saturday, friday )
+        messages ( have unread message, send to employers )
+        help ( contact form to gmail account, contact form [dump database] )
+        signout
+    ☐ Make interview page / controller filtered by candidate
 
 Employer Navigation:
-profile ( editing, password )
-account ( selecting and paying for options )
-positions ( CRUD )
-candidates ( all candidates, saved candidates [ able to send from any candidate area ] )
-schedule ( saturday, friday ) *no need to disable*
-messages ( have unread message, send to candidates )
-help ( contact form to gmail account, contact form [dump database] )
-signout
-☐ User field on the add.ctp the created field and hidden
-☐ Jobs are only visible by candidates with candidate number
-☐ Create search for jobs
-☐ Create search for employers
+        profile ( editing, password )
+        account ( selecting and paying for options )
+        positions ( CRUD )
+        candidates ( all candidates, saved candidates [ able to send from any candidate area ] )
+        schedule ( saturday, friday ) *no need to disable*
+        messages ( have unread message, send to candidates )
+    ☐ Make Employer/employer_id useds as the TO Employer field
+    ☐ Make User/user_id useds as the TO Candidate field
+    ☐ Make Author/author_id the From Candidate/Employer User ( add employers institution )
+        help ( contact form to gmail account, contact form [dump database] )
+        signout
+    ☐ User field on the add.ctp the created field and hidden
+    ☐ Jobs are only visible by candidates with candidate number
+    ☐ Create search for jobs
+    ☐ Create search for employers
 
 Job Search Fields:
-state
-institution
-employer number
-position type ( grad  entry )
+        state
+        institution
+        employer number
+        position type ( grad  entry )
 
 Candidate Search Fields:
-candidate number
-username
-email
-degree
-name
+        candidate number
+        username
+        email
+        degree
+        name
 
 Admin Navigation:
-candidate
-employers 
-schedule [see employers] ( edit candidate / employer, print candidate / employer )
-packages 
-positions
-messages 
+        candidate
+        employers 
+        schedule [see employers] ( edit candidate / employer, print candidate / employer )
+        packages 
+        positions
+        messages 
 
 Logging In:
 

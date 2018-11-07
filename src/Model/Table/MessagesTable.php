@@ -50,7 +50,8 @@ class MessagesTable extends Table
             'foreignKey' => 'user_id'
         ]);
         $this->belongsTo('Authors', [
-            'foreignKey' => 'author_id'
+            'foreignKey' => 'author_id',
+            'className' => 'Users'
         ]);
     }
 
