@@ -13,7 +13,7 @@
 <li><?= $this->Html->link(__("<i class='fa fas far fa-clock'></i>&nbsp;&nbsp;Friday"), ['controller' => 'FriTimeslots', 'action' => 'interviews'], ['escape' => false]) ?></li>
 <li><?= $this->Html->link(__("<i class='fa fas far fa-clock'></i>&nbsp;&nbsp;Saturday"), ['controller' => 'SatTimeslots', 'action' => 'interviews'], ['escape' => false]) ?></li>
 </ul></li>
-<li><?= $this->Html->link(__("<i class='fa fas fa fas fa-envelope-open-text'></i>&nbsp;&nbsp;Messages"), ['controller' => 'Users', 'action' => 'add'], ['escape' => false]) ?></li>
+<li><?= $this->Html->link(__("<i class='fa fas fa fas fa-envelope-open-text'></i>&nbsp;&nbsp;Messages"), ['controller' => 'Messages', 'action' => 'personal'], ['escape' => false]) ?></li>
 <li><?= $this->Html->link(__("<i class='fa fas far fa-question-circle'></i>&nbsp;&nbsp;Help"), ['controller' => 'Users', 'action' => 'add'], ['escape' => false]) ?></li>
 <li><?= $this->Html->link(__("<i class='fa fas fas fa-sign-out-alt'></i>&nbsp;&nbsp;Sign Out"), ['controller' => 'Users', 'action' => 'add'], ['escape' => false]) ?></li>
 </ul>
@@ -35,7 +35,7 @@
 <li><?= $this->Html->link(__('Saturday'), ['controller' => 'Users', 'action' => 'add']) ?><li>
 </ul>
 </li>
-<li><?= $this->Html->link(__('Messages'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+<li><?= $this->Html->link(__('Messages'), ['controller' => 'Messages', 'action' => 'employer']) ?></li>
 <li><?= $this->Html->link(__('Help'), ['controller' => 'Users', 'action' => 'add']) ?></li>
 <li><?= $this->Html->link(__('Sign Out'), ['controller' => 'Users', 'action' => 'add']) ?></li>
 <li>

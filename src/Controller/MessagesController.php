@@ -26,6 +26,44 @@ class MessagesController extends AppController
         $messages = $this->paginate($this->Messages);
 
         $this->set(compact('messages'));
+
+    }
+
+    /**
+     * Candidate method
+     *
+     * @return \Cake\Http\Response|void
+     */
+    public function personal($id = null)
+    {
+        // TODO add during production $id = $this->UserAuth->getUserId();
+        $id = 2;
+        $this->paginate = [
+            'contain' => ['Employers', 'Users', 'Authors'],
+            'conditions' => ['Messages.user_id' => $id]
+        ];
+        $messages = $this->paginate($this->Messages);
+
+        $this->set(compact('messages'));
+    }
+
+
+    /**
+     * Employer method
+     *
+     * @return \Cake\Http\Response|void
+     */
+    public function employer($id = null)
+    {
+        // TODO add during production $id = employer_id;
+        $id = 1;
+        $this->paginate = [
+            'contain' => ['Employers', 'Users', 'Authors'],
+            'conditions' => ['Messages.employer_id' => $id]
+        ];
+        $messages = $this->paginate($this->Messages);
+
+        $this->set(compact('messages'));
     }
 
     /**

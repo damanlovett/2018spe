@@ -20,11 +20,13 @@ Employer Navigation:
         account ( selecting and paying for options )
         positions ( CRUD )
         candidates ( all candidates, saved candidates [ able to send from any candidate area ] )
+    ☐ Add [ send ] button to candidate view page
         schedule ( saturday, friday ) *no need to disable*
         messages ( have unread message, send to candidates )
     ☐ Make Employer/employer_id useds as the TO Employer field
     ☐ Make User/user_id useds as the TO Candidate field
     ☐ Make Author/author_id the From Candidate/Employer User ( add employers institution )
+    ☐ Add [ Send ] button to employer.ctp
         help ( contact form to gmail account, contact form [dump database] )
         signout
     ☐ User field on the add.ctp the created field and hidden
