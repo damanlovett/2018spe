@@ -8,7 +8,7 @@
 <li><?= $this->Html->link(__("<i class='fa fas fa-user-alt'></i>&nbsp;&nbsp;Profile"), ['controller' => 'Users', 'action' => 'add'], ['escape' => false]) ?></li>
 <li><?= $this->Html->link(__("<i class='fa fas fa-users'></i>&nbsp;&nbsp;Employers"), ['controller' => 'Employers', 'action' => 'index'], ['escape' => false]) ?></li>
 <li><?= $this->Html->link(__("<i class='fa fas fa-briefcase'></i>&nbsp;&nbsp;Positions"), ['controller' => 'Jobs', 'action' => 'index'], ['escape' => false]) ?></li>
-<li><?= $this->Html->link(__("<i class='fa fas far fa-calendar'></i>&nbsp;&nbsp;Schedule"), ['controller' => 'Users', 'action' => 'add'], ['escape' => false]) ?>
+<li><?= $this->Html->link(__("<i class='fa fas far fa-calendar'></i>&nbsp;&nbsp;Schedule"), ['controller' => 'FriTimeslots', 'action' => 'interviews'], ['escape' => false]) ?></li>
 <ul>
 <li><?= $this->Html->link(__("<i class='fa fas far fa-clock'></i>&nbsp;&nbsp;Friday"), ['controller' => 'FriTimeslots', 'action' => 'interviews'], ['escape' => false]) ?></li>
 <li><?= $this->Html->link(__("<i class='fa fas far fa-clock'></i>&nbsp;&nbsp;Saturday"), ['controller' => 'SatTimeslots', 'action' => 'interviews'], ['escape' => false]) ?></li>
@@ -27,7 +27,7 @@
   <ul class="dropdown-content">
 <li><?= $this->Html->link(__('Profile'), ['controller' => 'Users', 'action' => 'add']) ?></li>
 <li><?= $this->Html->link(__('Account'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-<li><?= $this->Html->link(__('Positions'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+<li><?= $this->Html->link(__("<i class='fa fas fa-briefcase'></i>&nbsp;&nbsp;Positions"), ['controller' => 'Jobs', 'action' => 'employer'], ['escape' => false]) ?></li>
 <li><?= $this->Html->link(__('Candidates'), ['controller' => 'Users', 'action' => 'add']) ?></li>
 <li><?= $this->Html->link(__('Schedule'), ['controller' => 'Users', 'action' => 'add']) ?>
 <ul>

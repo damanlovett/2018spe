@@ -29,14 +29,18 @@ class JobsController extends AppController
     }
 
     /**
-     * Manager method
+     * Employer method
      *
      * @return \Cake\Http\Response|void
      */
-    public function Manager()
+    public function employer()
     {
+                // TODO use employer_id for $id
+        $id = 1;
+
         $this->paginate = [
-            'contain' => ['Employers', 'Users']
+            'contain' => ['Employers', 'Users'],
+            'conditions' => ['Jobs.employer_id' => $id]
         ];
         $jobs = $this->paginate($this->Jobs);
 

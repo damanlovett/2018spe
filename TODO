@@ -19,6 +19,7 @@ Employer Navigation:
         profile ( editing, password )
         account ( selecting and paying for options )
         positions ( CRUD )
+    ☐ Set routes for positions instead of jobs
         candidates ( all candidates, saved candidates [ able to send from any candidate area ] )
     ☐ Add [ send ] button to candidate view page
         schedule ( saturday, friday ) *no need to disable*
