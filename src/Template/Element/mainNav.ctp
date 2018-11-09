@@ -26,7 +26,7 @@
   </button>
   <ul class="dropdown-content">
 <li><?= $this->Html->link(__('Profile'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-<li><?= $this->Html->link(__('Account'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+<li><?= $this->Html->link(__("<i class='fa fas fa-user-cog'></i>&nbsp;&nbsp;Account"), ['controller' => 'Employers', 'action' => 'account'], ['escape' => false]) ?></li>
 <li><?= $this->Html->link(__("<i class='fa fas fa-briefcase'></i>&nbsp;&nbsp;Positions"), ['controller' => 'Jobs', 'action' => 'employer'], ['escape' => false]) ?></li>
 <li><?= $this->Html->link(__("<i class='fas fa-user-circle'></i>&nbsp;&nbsp;Candidates"), ['controller' => 'Users', 'action' => 'candidates'], ['escape' => false]) ?>
 <ul><li><?= $this->Html->link(__("<i class='fas fas fa-sort-alpha-down'></i>&nbsp;&nbsp;Active"), ['controller' => 'Users', 'action' => 'saved'], ['escape' => false]) ?></li>
@@ -34,13 +34,12 @@
 
 </ul>
 </li>
-<li><?= $this->Html->link(__('Schedule'), ['controller' => 'Users', 'action' => 'add']) ?>
+<li><?= $this->Html->link(__("<i class='fa fas far fa-calendar'></i>&nbsp;&nbsp;Schedule"), ['controller' => 'FriTimeslots', 'action' => 'einterviews'], ['escape' => false]) ?></li>
 <ul>
-<li><?= $this->Html->link(__('Friday'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-<li><?= $this->Html->link(__('Saturday'), ['controller' => 'Users', 'action' => 'add']) ?><li>
-</ul>
-</li>
-<li><?= $this->Html->link(__('Messages'), ['controller' => 'Messages', 'action' => 'employer']) ?></li>
+<li><?= $this->Html->link(__("<i class='fa fas far fa-clock'></i>&nbsp;&nbsp;Friday"), ['controller' => 'FriTimeslots', 'action' => 'einterviews'], ['escape' => false]) ?></li>
+<li><?= $this->Html->link(__("<i class='fa fas far fa-clock'></i>&nbsp;&nbsp;Saturday"), ['controller' => 'SatTimeslots', 'action' => 'einterviews'], ['escape' => false]) ?></li>
+</ul></li>
+<li><?= $this->Html->link(__("<i class='fa fas fa fas fa-envelope-open-text'></i>&nbsp;&nbsp;Messages"), ['controller' => 'Messages', 'action' => 'employer'], ['escape' => false]) ?></li>
 <li><?= $this->Html->link(__('Help'), ['controller' => 'Users', 'action' => 'add']) ?></li>
 <li><?= $this->Html->link(__('Sign Out'), ['controller' => 'Users', 'action' => 'add']) ?></li>
 <li>

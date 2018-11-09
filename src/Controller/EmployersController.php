@@ -78,6 +78,25 @@ class EmployersController extends AppController
         $this->set('employer', $employer);
     }
 
+
+    /**
+     * Employer view method
+     *
+     * @param string|null $id Employer id.
+     * @return \Cake\Http\Response|void
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function account($id = null)
+    {
+        //TODO Make $id employer_$id not a passed variable
+        $id = 1;
+        $employer = $this->Employers->get($id, [
+            'contain' => ['Announcements', 'FavCandidates', 'FriSchedules', 'FriTimeslots', 'Jobs', 'Messages', 'Packages', 'Posts', 'SatSchedules', 'SatTimeslots', 'Transactions', 'Users']
+        ]);
+
+        $this->set('employer', $employer);
+    }
+
     /**
      * Add method
      *

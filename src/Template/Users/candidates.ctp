@@ -122,7 +122,7 @@
                 <?= $this->Form->create(null, [
                     'url' => ['controller' => 'Users', 'action' => 'application']
                 ]); ?>
-            <?= $this->Form->hidden('id', ['value' => 2]); ?>
+            <?= $this->Form->hidden('id', ['value' => $user->id]); ?>
 
                     <?= $this->Form->submit('Click me'); ?>
                     <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
