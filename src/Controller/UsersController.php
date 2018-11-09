@@ -29,6 +29,22 @@ class UsersController extends AppController
     }
 
     /**
+     * Candidates method
+     *
+     * @return \Cake\Http\Response|void
+     */
+    public function candidates()
+    {
+        $this->paginate = [
+            'contain' => ['UserGroups', 'Employers'],
+            'conditions' => ['Users.can_num IS NOT' => null]
+        ];
+        $users = $this->paginate($this->Users);
+
+        $this->set(compact('users'));
+    }
+
+    /**
      * View method
      *
      * @param string|null $id User id.
@@ -37,6 +53,23 @@ class UsersController extends AppController
      */
     public function view($id = null)
     {
+        $user = $this->Users->get($id, [
+            'contain' => ['UserGroups', 'Employers', 'Groups', 'Activity', 'Announcements', 'FavCandidates', 'Favorites', 'Fees', 'FriSchedules', 'FriTimeslots', 'Jobs', 'LoginTokens', 'Messages', 'MyFiles', 'Packages', 'Posts', 'SatSchedules', 'SatTimeslots', 'ScheduledEmailRecipients', 'Transactions', 'UserActivities', 'UserContacts', 'UserDetails', 'UserEmailRecipients', 'UserEmailSignatures', 'UserEmailTemplates', 'UserSocials']
+        ]);
+
+        $this->set('user', $user);
+    }
+
+    /**
+     * Candidate view method
+     *
+     * @param string|null $id User id.
+     * @return \Cake\Http\Response|void
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function application($id = null)
+    {
+        $id = $_POST['id'];
         $user = $this->Users->get($id, [
             'contain' => ['UserGroups', 'Employers', 'Groups', 'Activity', 'Announcements', 'FavCandidates', 'Favorites', 'Fees', 'FriSchedules', 'FriTimeslots', 'Jobs', 'LoginTokens', 'Messages', 'MyFiles', 'Packages', 'Posts', 'SatSchedules', 'SatTimeslots', 'ScheduledEmailRecipients', 'Transactions', 'UserActivities', 'UserContacts', 'UserDetails', 'UserEmailRecipients', 'UserEmailSignatures', 'UserEmailTemplates', 'UserSocials']
         ]);

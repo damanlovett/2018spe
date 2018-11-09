@@ -28,7 +28,12 @@
 <li><?= $this->Html->link(__('Profile'), ['controller' => 'Users', 'action' => 'add']) ?></li>
 <li><?= $this->Html->link(__('Account'), ['controller' => 'Users', 'action' => 'add']) ?></li>
 <li><?= $this->Html->link(__("<i class='fa fas fa-briefcase'></i>&nbsp;&nbsp;Positions"), ['controller' => 'Jobs', 'action' => 'employer'], ['escape' => false]) ?></li>
-<li><?= $this->Html->link(__('Candidates'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+<li><?= $this->Html->link(__("<i class='fas fa-user-circle'></i>&nbsp;&nbsp;Candidates"), ['controller' => 'Users', 'action' => 'candidates'], ['escape' => false]) ?>
+<ul><li><?= $this->Html->link(__("<i class='fas fas fa-sort-alpha-down'></i>&nbsp;&nbsp;Active"), ['controller' => 'Users', 'action' => 'saved'], ['escape' => false]) ?></li>
+<li><?= $this->Html->link(__("<i class='fas fas fa-save'></i>&nbsp;&nbsp;Saved"), ['controller' => 'Users', 'action' => 'add'], ['escape' => false]) ?></li>
+
+</ul>
+</li>
 <li><?= $this->Html->link(__('Schedule'), ['controller' => 'Users', 'action' => 'add']) ?>
 <ul>
 <li><?= $this->Html->link(__('Friday'), ['controller' => 'Users', 'action' => 'add']) ?></li>
